@@ -16,8 +16,12 @@ export default async function Home() {
             <Link href="/services">Go to Services Page</Link>
           </li>
           <li>
-            <Link href="/about">Go to About Page</Link>
+            <Link href="/about"className="text-4xl">Go to About Page</Link>
           </li>
+          <li>
+            <Link href="/files">Go to File Path Page</Link>
+          </li>
+         
         </ul>
       </nav>
     </>

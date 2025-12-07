@@ -2,7 +2,7 @@
 
 async function Blog1({params}) {
   
-  console.log(await params);
+  
   
   const { BlogID } = await params;
   
