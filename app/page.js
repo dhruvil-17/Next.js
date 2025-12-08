@@ -6,9 +6,9 @@ export default async function Home() {
   
   return (
     <>
-      <h1>Home Page</h1>
+      <h1 className="text-3xl">Home Page</h1>
       <nav>
-        <ul>
+        <ul className="text-blue-500 underline">
           <li>
             <Link href="/Blogs">Go to Blogs Page</Link>
           </li>
@@ -16,7 +16,7 @@ export default async function Home() {
             <Link href="/services">Go to Services Page</Link>
           </li>
           <li>
-            <Link href="/about"className="text-4xl">Go to About Page</Link>
+            <Link href="/about">Go to About Page</Link>
           </li>
           <li>
             <Link href="/files">Go to File Path Page</Link>

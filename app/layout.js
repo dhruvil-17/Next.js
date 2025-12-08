@@ -1,15 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./globals.css";
 
 export const metadata = {
   title: "My Blog App",
@@ -19,12 +8,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header>Header</header>
+      <body className="flex flex-col items-center text-center" >
+        <header className="text-4xl bg-amber-600 text-white w-full">Header</header>
         {children}
-        <footer>Footer</footer>
+        <footer className="text-4xl bg-amber-500 text-white w-full">Footer</footer>
       </body>
       
     </html>
