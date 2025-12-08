@@ -1,26 +1,17 @@
-// app/api/todos/route.js
+import { todos, updateTodos } from "@/lib/todos";
 
-// 🔴 In-memory "database" (resets on server restart)
-let todos = [
-  { id: 1, title: "Learn Next.js CRUD", done: false },
-  { id: 2, title: "Connect real database later", done: false },
-];
-
-// GET /api/todos  → Read all todos
+// GET 
 export async function GET() {
   return Response.json(todos);
 }
 
-// POST /api/todos  → Create new todo
+// POST 
 export async function POST(request) {
   const body = await request.json();
   const title = body.title?.trim();
 
   if (!title) {
-    return Response.json(
-      { message: "Title is required" },
-      { status: 400 }
-    );
+    return Response.json({ error: "Title is required" }, { status: 400 });
   }
 
   const newTodo = {
@@ -29,7 +20,7 @@ export async function POST(request) {
     done: false,
   };
 
-  todos.push(newTodo);
+  updateTodos([...todos, newTodo]);
 
   return Response.json(newTodo, { status: 201 });
 }
