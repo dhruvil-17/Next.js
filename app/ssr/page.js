@@ -1,18 +1,16 @@
-// app/ssr-posts/page.js
-
-// This is a SERVER COMPONENT by default (no "use client")
+// This is a server component by default (no "use client")
 
 // Ensure fresh data every request:
-export const dynamic = "force-dynamic"; // optional but explicit
+export const dynamic = "force-dynamic";
 
 export default async function SSRPostsPage() {
-  // Fetch data on the SERVER before sending HTML to the client
+  // Fetch data on the server before sending HTML to the client
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "no-store", // do not cache → SSR-like behavior
   });
 
   if (!res.ok) {
-    // we could also throw an error to use error.js
+    
     return (
       <div>
         <h1>SSR Posts</h1>
